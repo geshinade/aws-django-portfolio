@@ -1,0 +1,91 @@
+{% load static %}
+<!-- ================================
+    Start Footer
+================================= -->
+<footer class="footer border-top p-4">
+    <div class="footerCol">
+        <div class="container">
+            <ul class="socialCol">
+              <li><a href="{{me.userprofile.facebook}}"><img src="{% static 'images/fb.svg' %}" alt="..."></a></li>
+              <li><a href="{{me.userprofile.github}}"><img src="{% static 'images/github.svg' %}" alt="..."></a></li>
+              <li><a href="{{me.userprofile.twitter}}"><img src="{% static 'images/twitter.svg' %}" alt="..."></a></li>
+              <li><a href="{{me.userprofile.linkedin}}"><img src="{% static 'images/linkedin.svg' %}" alt="..."></a></li>
+            </ul>
+            <div class="copyrightCol">
+                <p>Copyright ©{% now 'Y' %} Geshin Aderemi - All rights reserved.</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+ <!-- ================================
+    Start Scripts
+    ================================= -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://unpkg.com/swiper@7.0.5/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>        
+        if ($(".text-slider").length == 1) {
+        var typed_strings = $(".text-slider-items").text();
+        var typed = new Typed(".text-slider", {
+            strings: typed_strings.split(", "),
+            typeSpeed: 50,
+            loop: true,
+            backDelay: 900,
+            backSpeed: 30,
+        });
+    }
+
+    // Back to top button
+    $(window).scroll(function () {
+    if ($(this).scrollTop() > 300) {
+        $('.back-to-top').fadeIn('slow');
+    } else {
+        $('.back-to-top').fadeOut('slow');
+    }
+    });
+    $('.back-to-top').click(function () {
+    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+    return false;
+    });
+
+    // Portfolio isotope and filter
+    var portfolioIsotope = $('.portfolio-container').isotope({
+    itemSelector: '.portfolio-item',
+    layoutMode: 'fitRows'
+    });
+    $('#portfolio-flters li').on('click', function () {
+    $("#portfolio-flters li").removeClass('active');
+    $(this).addClass('active');
+
+    portfolioIsotope.isotope({filter: $(this).data('filter')});
+    });
+
+    </script>
+
+    
+    <!-- ================================
+    End Scripts
+    ================================= -->
+  </body>
+</html>
+
+<!-- ================================
+    End Footer
+================================= -->

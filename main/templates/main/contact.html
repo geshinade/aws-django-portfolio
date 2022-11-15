@@ -1,0 +1,96 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}{% endblock %}
+{% block decription %}{% endblock %}
+{% block keywords %}{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+
+<!-- ================================
+Start CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END CSS blocks
+================================= -->
+
+<!-- ================================
+Start script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+{% block content %}
+<section>
+  <div class="innerPageBannerCol">
+    <div class="container">
+    </div>
+  </div>
+</section>
+
+<section class="contact py-5 " id="contact">
+  <div class="container-lg py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-title text-center">
+          <h2 class="fw-bold mb-5">Get in Touch</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <div class="contact-item d-flex mb-3">
+          <div class="icon fs-4 text-danger">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="text ms-3">
+            <h3 class="fs-5">Email</h3>
+            <p class="text-muted">geshinaderemi06@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-item d-flex md-3">
+          <div class="icon fs-4 text-danger">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="text ms-3">
+            <h3 class="fs-5">Phone</h3>
+            <p class="text-muted">+234 8103503616</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="contact-form">
+          <form id="contactForm" method="POST" action="/contact/">
+          {% csrf_token %}
+              <label for="name">Name</label>
+              {{form.name}}
+
+              <label for="email">Email</label>
+              {{form.email}}
+
+              <label for="subject">Message</label>
+              {{form.message}}
+
+              <input class='btn btnPrimary' type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+End Content
+================================= -->
+{%endblock%}
+    
