@@ -1,6 +1,6 @@
 asgiref==3.5.2
 Django==3.2
-django-admin-honeypot==1.1.0
+git+https://github.com/dev-rathankumar/django-admin-honeypot@26947f1579ab04454cf0f4062af88adec426ab5d#egg=django-admin-honeypot
 django-ckeditor==6.1.0
 django-js-asset==2.0.0
 Pillow==9.3.0
