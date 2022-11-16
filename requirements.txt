@@ -4,6 +4,7 @@ git+https://github.com/dev-rathankumar/django-admin-honeypot@26947f1579ab04454cf
 django-ckeditor==6.1.0
 django-js-asset==2.0.0
 Pillow==9.3.0
+psycopg2-binary==2.9.5
 python-decouple==3.6
 pytz==2022.6
 sqlparse==0.4.3
