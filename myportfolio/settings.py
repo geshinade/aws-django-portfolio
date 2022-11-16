@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ['52.33.178.186', 'portfolio-aws-env.eba-f3bbmjrk.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['52.33.178.186', 'portfolio-aws-env.eba-f3bbmjrk.us-west-2.elasticbeanstalk.com', '*']
 
 
 # Application definition
@@ -158,10 +158,12 @@ AWS_DEFAULT_ACL = 'public-read'
 AWS_LOCATION = 'static'
 
 STATICFILES_DIRS = [
-    'greatkart/static',
+    'myportfolio/static',
 ]
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+DEFAULT_FILE_STORAGE = 'myportfolio.media_storages.MediaStorage'
 
 
 MEDIA_URL = "/media/"
