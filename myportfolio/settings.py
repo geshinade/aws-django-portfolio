@@ -79,7 +79,6 @@ WSGI_APPLICATION = 'myportfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-import os
 if 'RDS_DB_NAME' in os.environ:
     DATABASES = {
         'default': {
